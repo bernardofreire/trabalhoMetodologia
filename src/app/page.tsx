@@ -8,17 +8,19 @@ export default function Home() {
   return (
     <main>
       <div className="h-screen flex justify-center items-center">
-        <div className="flex items-center justify-around  w-1/2 max-w-full h-72">
-          <div className="p-6">
+        <div className="flex flex-col md:flex-row items-center justify-around w-full max-w-4xl h-auto p-6">          <div className="p-6">
+          <div className="mb-6 md:mb-0 md:p-6">
             <Image
               src="/images/logo.svg"
-              alt="Picture of the author"
-              width={400}
-              height={400}
+              alt="Logo"
+              width={300} // Reduza um pouco a largura para telas pequenas
+              height={300}
               draggable={false}
+              className="mx-auto"
             />
           </div>
-          <div>
+        </div>
+          <div className="hidden md:block">
             <Image
               src="/images/vetor.png"
               alt="Picture of the author"
@@ -27,9 +29,9 @@ export default function Home() {
               draggable={false}
             />
           </div>
-          <div className="p-6 flex flex-col justify-around h-full">
+          <div className="p-6 flex flex-col gap-7 justify-be h-full">
             <h1>Login</h1>
-            <form className="flex flex-col space-y-2 items-center justify-between">
+            <form className="flex flex-col w-72 md:w-96 lg:w-72 space-y-2 items-center justify-between">
               <Input className="focus:border-purple-800" name="email" placeholder="Digite o email"></Input>
               <Input className="focus:border-purple-800" name="senha" type="password" placeholder="Digite a senha"></Input>
             </form>

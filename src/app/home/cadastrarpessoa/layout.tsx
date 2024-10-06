@@ -26,6 +26,7 @@ const LayoutCadastroPessoa = ({ children }: LayoutProps) => {
   const isConcluidoPage = pathname.includes('/concluido');
 
   return (
+    
     <CadastroProvider>
       <div className="flex flex-col mt-2 items-center">
         <div className='w-full flex items-center justify-center'>

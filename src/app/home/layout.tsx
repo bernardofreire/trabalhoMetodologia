@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { CadastroUsuarioProvider } from '@/context/CadastroUsuarioContext';
 import Menu from '../../components/template/Menu';
 import Titulo from '@/components/template/title_home';
 import { usePathname } from 'next/navigation';
@@ -41,25 +42,21 @@ const LayoutHome = ({ children }: LayoutProps) => {
   const { titulo, etapa } = getTitleAndStep();
 
   return (
-    <div className='flex'>
-      <Menu />
-      <div className='w-full h-screen py-5 px-10 bg-gray-100/90'>
-        <div className='w-full flex items-center justify-center'>
-          <Titulo titulo={titulo} etapa={etapa} />
-        </div>
-        <div className='bg-white py-10 mt-10 rounded shadow-sm'>
-          {children}
-        </div>
-      </div>
-      <div className='w-1/4 h-screen py-5 px-10 bg-gray-100/90'>
-        <div className='w-full flex items-center justify-center'>
-          <Titulo titulo={titulo} etapa={etapa} />
-        </div>
-        <div className='bg-white py-10 mt-10 rounded shadow-sm'>
-          {children}
+
+
+    <CadastroUsuarioProvider>
+      <div className='flex'>
+        <Menu />
+        <div className='w-full h-screen py-5 px-10 bg-gray-100/90'>
+          <div className='w-full flex items-center justify-center'>
+            <Titulo titulo={titulo} etapa={etapa} />
+          </div>
+          <div className='bg-white py-10 mt-10 rounded shadow-sm'>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </CadastroUsuarioProvider>
   );
 }
 

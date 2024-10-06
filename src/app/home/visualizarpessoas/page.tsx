@@ -17,8 +17,6 @@ export function TableDemo() {
             <Table />
           </div>
         </div>
-
-
       </div>
 
     </>
