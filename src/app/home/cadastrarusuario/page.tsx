@@ -1,10 +1,12 @@
-// src/components/CadastrarUsuario.tsx
 'use client';
 
 import React, { useState } from 'react';
 import { useCadastroUsuario } from '@/context/CadastroUsuarioContext';
 import FormInput from '@/components/template/inputText';
 import NavigationButton from '@/components/template/botao';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, database } from '@/server/firebaseConfig';
+import { ref, set } from 'firebase/database';
 
 const CadastrarUsuario = () => {
   const { usuarioData, updateUsuarioData, clearUsuarioData } = useCadastroUsuario();
@@ -24,35 +26,55 @@ const CadastrarUsuario = () => {
     updateUsuarioData({ [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Verifica se todos os campos estão preenchidos
     const { primeiroNome, ultimoNome, email, senha, confirmarSenha } = formData;
     if (!primeiroNome || !ultimoNome || !email || !senha || !confirmarSenha) {
-      setError('Por favor, preencha todos os campos.');
-      return;
+        setError('Por favor, preencha todos os campos.');
+        return;
     }
 
     // Validação da senha
     if (senha !== confirmarSenha) {
-      setError('As senhas não correspondem!');
-      return;
+        setError('As senhas não correspondem!');
+        return;
     }
 
     // Limpa a mensagem de erro ao submeter com sucesso
     setError(null);
-    console.log('Dados do usuário:', formData);
-    
-    // Limpa os campos de input e os dados no contexto
-    setFormData({
-      primeiroNome: '',
-      ultimoNome: '',
-      email: '',
-      senha: '',
-      confirmarSenha: '',
-    });
-    clearUsuarioData();
+
+    try {
+        // Criar usuário com email e senha
+        const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+        
+        // Aqui você pode acessar o ID do usuário se necessário
+        const userId = userCredential.user.uid;
+
+        // (Opcional) Salvar informações adicionais no banco de dados, se necessário
+        const userRef = ref(database, `users/${userId}`);
+        await set(userRef, {
+            primeiroNome: primeiroNome,
+            ultimoNome: ultimoNome,
+            email: email,
+            lastLogin: new Date().toISOString() // Apenas um exemplo
+        });
+
+        console.log('Usuário cadastrado com sucesso:', userId);
+
+        // Limpa os campos de input e os dados no contexto
+        setFormData({
+            primeiroNome: '',
+            ultimoNome: '',
+            email: '',
+            senha: '',
+            confirmarSenha: '',
+        });
+        clearUsuarioData();
+    } catch (error) {
+        setError(error.message); // Lida com erros de cadastro
+    }
   };
 
   return (

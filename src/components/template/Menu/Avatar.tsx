@@ -14,7 +14,7 @@ const Avatar: React.FC = () => (
     </div>
     <div className="flex flex-col justify-center items-center">
       <span className="text-gray-500 text-xs">Bem vindo,</span>
-      <span className="text-sm">Taylor Swift</span>
+      <span className="text-sm">Bernardo Silva</span>
     </div>
   </div>
 );

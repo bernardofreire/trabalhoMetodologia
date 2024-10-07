@@ -20,6 +20,7 @@ const LayoutCadastroPessoa = ({ children }: LayoutProps) => {
     if (pathname.includes('/endereco')) return 3;
     if (pathname.includes('/contato')) return 4;
     if (pathname.includes('/responsavel')) return 5;
+    if (pathname.includes('/atividade')) return 6;
     return 1;
   };
 

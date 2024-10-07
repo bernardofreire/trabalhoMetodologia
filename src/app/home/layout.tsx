@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CadastroUsuarioProvider } from '@/context/CadastroUsuarioContext';
-import Menu from '../../components/template/Menu';
+import Menu from '../../components/template/Menu/Menu';
 import Titulo from '@/components/template/title_home';
 import { usePathname } from 'next/navigation';
 

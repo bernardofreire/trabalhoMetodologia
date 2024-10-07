@@ -117,7 +117,7 @@ const Responsavel = () => {
       </div>
       <div className="flex justify-between w-full mt-6">
         <NavigationButton href="/home/cadastrarpessoa/contato" text="Voltar" />
-        <NavigationButton href="/home/cadastrarpessoa/concluido" text="Concluir" />
+        <NavigationButton href="/home/cadastrarpessoa/atividade" text="Avançar" />
       </div>
     </form>
   );

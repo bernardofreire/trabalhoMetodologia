@@ -38,6 +38,12 @@ interface CadastroData {
         telContatoResponsavel?: string;
         celularResponsavel?: string;
     };
+    atividade: {
+        nomeAtividade?: string;
+        turno?: string;
+        dia?: string;
+        horario?: string;
+    };
 }
 
 // Define a interface para o contexto
@@ -68,6 +74,7 @@ export const CadastroProvider = ({ children }: { children: ReactNode }) => {
         enderecoPessoa: {},
         contato: {},
         responsavel: {},
+        atividade: {},
     });
 
     // Função para atualizar os dados de cada etapa com tipagem mais precisa
@@ -87,6 +94,7 @@ export const CadastroProvider = ({ children }: { children: ReactNode }) => {
             enderecoPessoa: {},
             contato: {},
             responsavel: {},
+            atividade: {},
         });
     };
 

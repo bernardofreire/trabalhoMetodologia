@@ -19,7 +19,7 @@ interface FormSelectProps {
   onChange?: (value: string) => void; // Função onChange para manipular o valor selecionado
 }
 
-const FormSelect: React.FC<FormSelectProps> = ({ label, placeholder, items,value, name, onChange }) => {
+const FormSelect: React.FC<FormSelectProps> = ({ label, placeholder, items, value, name, onChange }) => {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <label className="block text-sm font-medium">{label}</label>

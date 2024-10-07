@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import React from 'react';
-import { FaUser, FaInfoCircle, FaMapMarkerAlt, FaPhone, FaUserTie } from 'react-icons/fa';
+import { FaUser, FaInfoCircle, FaMapMarkerAlt, FaPhone, FaUserTie, FaClipboardCheck } from 'react-icons/fa'; // Importando o novo ícone
 
 interface ProgressBarProps {
   currentStep: number;
@@ -14,6 +14,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
     { name: 'Endereço', icon: FaMapMarkerAlt },
     { name: 'Contato', icon: FaPhone },
     { name: 'Responsável', icon: FaUserTie },
+    { name: 'Atividade', icon: FaClipboardCheck }, // Nova etapa adicionada
   ];
 
   return (

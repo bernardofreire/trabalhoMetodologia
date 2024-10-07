@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Avatar from './Avatar';
 import MenuSection from './MenuSection';
-import { PlusIcon, UserPlusIcon, UserGroupIcon, ActivityIcon, MenuIcon, CloseIcon } from './Icons'; // Crie os ícones
+import { PlusIcon, UserPlusIcon, UserGroupIcon, ActivityIcon, MenuIcon, CloseIcon } from '../Icons'; // Crie os ícones
 
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar o menu

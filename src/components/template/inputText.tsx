@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 // Tipos das propriedades do componente FormInput
 interface FormInputProps {
-  label: string;
+  label?: string;
   name: string;
   placeholder: string;
   type?: string;
