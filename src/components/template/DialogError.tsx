@@ -21,7 +21,7 @@ export default function ErrorDialog({ isOpen, onClose, errorMessage }: ErrorDial
                 <DialogHeader>
                     <DialogTitle>Erro de Login</DialogTitle>
                     <DialogDescription>
-                        {errorMessage || "Ocorreu um erro inesperado. Tente novamente."}
+                        {"Ocorreu um erro inesperado. Tente novamente."}
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter>

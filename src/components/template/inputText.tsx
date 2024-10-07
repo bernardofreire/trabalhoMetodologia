@@ -20,7 +20,7 @@ const FormInput: React.FC<FormInputProps> = ({ label, type = "text", name, place
     <div className={classNames("grid w-full items-center gap-1.5", className)}>
       <Label>{label}</Label>
       <Input
-        className="focus:border-purple-800"
+        className="focus:border-lime-600"
         type={type}
         name={name}
         placeholder={placeholder}

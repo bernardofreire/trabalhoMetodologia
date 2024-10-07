@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 const Avatar: React.FC = () => (
   <div className="flex flex-col justify-center items-center space-y-20">
-    <div>
+    <div className='cursor-pointer'>
       <Image
-        src="/images/logo.svg"
+        src="/images/logotipo.svg"
         alt="Logo"
-        width={180}
+        width={240}
         height={180}
         draggable={false}
       />

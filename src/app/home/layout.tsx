@@ -26,8 +26,10 @@ const LayoutHome = ({ children }: LayoutProps) => {
         return { titulo: "Cadastrar Pessoa", etapa: "Etapa (4)" };
       case '/home/cadastrarpessoa/responsavel':
         return { titulo: "Cadastrar Pessoa", etapa: "Etapa (5)" };
+      case '/home/cadastrarpessoa/atividade':
+        return { titulo: "Cadastrar Pessoa", etapa: "Etapa (6)" };
       case '/home/cadastrarpessoa/concluido':
-        return { titulo: "Cadastrar Pessoa", etapa: "Concluído" };
+        return { titulo: "Cadastrar Pessoa", etapa: "Concluir" };
       case '/home/registraratividade':
         return { titulo: "Registrar Pessoas", etapa: "" };
       case '/home/visualizarpessoas':

@@ -23,7 +23,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
         {/* Barra de Progresso */}
         <div className="absolute top-1/2 left-[10%] w-[80%] h-0.5 bg-gray-200 transform -translate-y-1/2">
           <div
-            className="absolute top-0 left-0 h-full bg-purple-800 transition-all duration-300 ease-in-out"
+            className="absolute top-0 left-0 h-full bg-lime-600 transition-all duration-300 ease-in-out"
             style={{ width: `${((currentStep - 1) / (steps.length - 1)) * 100}%` }}
           ></div>
         </div>
@@ -38,9 +38,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
                   index + 1 === currentStep
-                    ? 'bg-purple-800 text-white'
+                    ? 'bg-lime-600 text-white'
                     : index + 1 < currentStep
-                    ? 'bg-purple-200 text-purple-700'
+                    ? 'bg-lime-200 text-lime-700'
                     : 'bg-gray-200 text-gray-500'
                 } transition-all duration-300 ease-in-out`}
               >
@@ -48,7 +48,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
               </div>
               <span
                 className={`mt-2 text-xs font-medium ${
-                  index + 1 === currentStep ? 'text-purple-800' : 'text-gray-500'
+                  index + 1 === currentStep ? 'text-lime-600' : 'text-gray-500'
                 }`}
               >
                 {step.name}

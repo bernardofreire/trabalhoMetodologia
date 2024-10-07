@@ -15,12 +15,12 @@ interface NavigationButtonProps {
 const NavigationButton: React.FC<NavigationButtonProps> = ({ href, text, type = "button", onClick }) => {
   return href ? (
     <Link href={href} passHref>
-      <Button type={type} className="bg-purple-800 w-full">
+      <Button type={type} className="bg-lime-600 w-full">
         {text}
       </Button>
     </Link>
   ) : (
-    <Button type={type} className="bg-purple-800 w-full" onClick={onClick}>
+    <Button type={type} className="bg-lime-600 w-full" onClick={onClick}>
       {text}
     </Button>
   );

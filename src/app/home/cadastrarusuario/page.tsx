@@ -82,7 +82,8 @@ const CadastrarUsuario = () => {
       <div className="flex flex-col mt-2 items-center">
         <div className='w-full flex items-center justify-center'>
           <div className="w-full space-y-4 max-w-lg h-full rounded-md p-4">
-            {error && <p className="text-red-500">{error}</p>} {/* Mensagem de erro */}
+            <div className='text-3xl text-lime-700 pb-4'>Preencha os dados de cadastro</div>
+            {error && <p className="text-red-600">{error}</p>} {/* Mensagem de erro */}
 
             <FormInput
               label="Primeiro nome"

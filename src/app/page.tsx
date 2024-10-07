@@ -56,7 +56,7 @@ export default function Login() {
                     <div className="p-6">
                         <div className="mb-6 md:mb-0 md:p-6">
                             <Image
-                                src="/images/logo.svg"
+                                src="/images/logotipo.svg"
                                 alt="Logo"
                                 width={300}
                                 height={300}
@@ -78,22 +78,22 @@ export default function Login() {
                         <h1>Login</h1>
                         <form className="flex flex-col w-72 md:w-96 lg:w-72 space-y-2 items-center justify-between" onSubmit={handleSubmit}>
                             <Input
-                                className="focus:border-purple-800"
+                                className="focus:border-lime-600"
                                 name="email"
                                 placeholder="Digite o email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <Input
-                                className="focus:border-purple-800"
+                                className="focus:border-lime-600"
                                 name="senha"
                                 type="password"
                                 placeholder="Digite a senha"
                                 value={senha}
                                 onChange={(e) => setSenha(e.target.value)}
                             />
-                            {success && <p className="text-green-500">{success}</p>}
-                            <Button className="bg-purple-800 w-full" type="submit">Conectar</Button>
+                            {success && <p className="text-lime-600">{success}</p>}
+                            <Button className="bg-lime-600 w-full" type="submit">Conectar</Button>
                         </form>
                     </div>
                 </div>
